@@ -1,6 +1,6 @@
 @caa.flight.information.api_HostAddress = http://localhost:5124
 
-GET {{caa.flight.information.api_HostAddress}}/weatherforecast/
+GET {{caa.flight.information.api_HostAddress}}/flights/
 Accept: application/json
 
 ###

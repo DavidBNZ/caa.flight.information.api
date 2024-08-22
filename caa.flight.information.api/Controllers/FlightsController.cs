@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using caa.flight.information.api.Models;
 
 namespace caa.flight.information.api.Controllers
 {
+    /// <summary>
+    /// API for CRUD operations over Flight objects.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class FlightsController : ControllerBase
@@ -42,7 +40,7 @@ namespace caa.flight.information.api.Controllers
         }
 
         // PUT: api/Flights/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        // Updates the Flight with a given id, must match new Flight's id
         [HttpPut("{id}")]
         public async Task<IActionResult> PutFlight(int id, Flight flight)
         {
@@ -73,7 +71,6 @@ namespace caa.flight.information.api.Controllers
         }
 
         // POST: api/Flights
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Flight>> PostFlight(Flight flight)
         {
@@ -84,6 +81,7 @@ namespace caa.flight.information.api.Controllers
         }
 
         // DELETE: api/Flights/5
+        // Deletes the Flight with a given id
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteFlight(int id)
         {
